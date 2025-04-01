@@ -75,21 +75,189 @@
   }
   ```
 - **POST** `/auth/login` – вход пользователя и получение JWT токена (Открытый)
+
+ **Вход:**
+ ```json
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+ ```
+ **Выход:**
+ **200 OK** – успешный вход
+ ```json
+{
+  "token": "JWT_TOKEN"
+}
+ ```
+ **401 Unauthorized** – неверные учетные данные
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
+
+  
 - **GET** `/auth/me` – получение информации о текущем пользователе (Авторизованный пользователь)
+ **Вход:**
+
+*Данные не требуются, так как запрос будет использовать JWT токен для аутенфикации*
+ 
+ **Выход:**
+ **200 OK** – успешное получение информации о пользователе
+ ```json
+{
+  "id": 1,
+  "username": "user1",
+  "email": "user1@example.com",
+  "created_at": "2025-03-18T14:30:00Z"
+}
+ ```
+ **401 Unauthorized** – Пользователь не авторизован или токен не предоставлен
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
 
   ### Достопримечательности
   
  - **POST** /landmarks – добавление новой достопримечательности (Авторизованный пользователь)
+  **Вход:**
+ ```json
+{
+  "name": "Statue of Liberty",
+  "description": "A famous monument in New York",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/statue.jpg"
+}
+ ```
+ **Выход:**
+ **201 Created** – успешное создание достопримечательности
+ ```json
+{
+  "id": 1,
+  "name": "Statue of Liberty",
+  "description": "A famous monument in New York",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/statue.jpg",
+  "created_at": "2025-03-18T14:30:00Z",
+  "user_id": 1
+}
+ ```
+ **400 Bad Request** – данные неверны или отсутствуют обязательные поля
+ ```json
+{
+  "error": "Missing required fields"
+}
+```
 
  - **GET** /landmarks – получение списка всех достопримечательностей (Открытый)
+  **Вход:**
+  *Входные данные не требуются*
+ **Выход:**
+ **200 OK** – успешный вход
+ ```json
+{
+  "token": "JWT_TOKEN"
+}
+ ```
+ **401 Unauthorized** – неверные учетные данные
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
   
  - **GET** /landmarks/{id} – получение информации о конкретной достопримечательности (Открытый)
+   **Вход:**
+ ```json
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+ ```
+ **Выход:**
+ **200 OK** – успешный вход
+ ```json
+{
+  "token": "JWT_TOKEN"
+}
+ ```
+ **401 Unauthorized** – неверные учетные данные
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
   
  - **PUT** /landmarks/{id} – редактирование своей достопримечательности (Владелец)
+  **Вход:**
+ ```json
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+ ```
+ **Выход:**
+ **200 OK** – успешный вход
+ ```json
+{
+  "token": "JWT_TOKEN"
+}
+ ```
+ **401 Unauthorized** – неверные учетные данные
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
   
  - **DELETE** /landmarks/{id} – удаление своей достопримечательности (Владелец)
+  **Вход:**
+ ```json
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+ ```
+ **Выход:**
+ **200 OK** – успешный вход
+ ```json
+{
+  "token": "JWT_TOKEN"
+}
+ ```
+ **401 Unauthorized** – неверные учетные данные
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
   
  - **GET** /landmarks?country={country}&rating={rating} – фильтрация и сортировка по стране и рейтингу (Открытый)
+  **Вход:**
+ ```json
+{
+  "email": "user1@example.com",
+  "password": "password123"
+}
+ ```
+ **Выход:**
+ **200 OK** – успешный вход
+ ```json
+{
+  "token": "JWT_TOKEN"
+}
+ ```
+ **401 Unauthorized** – неверные учетные данные
+ ```json
+{
+    "error": "Invalid credentials"
+}
+```
 
   ### Фотографии
  - **POST** /photos – загрузка новой фотографии для достопримечательности (Авторизованный пользователь)
