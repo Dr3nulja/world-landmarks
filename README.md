@@ -174,7 +174,7 @@
          "location": "Paris",
          "imageUrl": "https://example.com/eiffel.jpg"
        }
-      ```
+         ```
        
         - **GET** /landmarks/{id} – получение информации о конкретной достопримечательности (Открытый)
      **Вход:**
@@ -191,13 +191,14 @@
        "imageUrl": "https://example.com/statue.jpg",
        "created_at": "2025-03-18T14:30:00Z"
      }
-      ```
+
+   ```
       **404 Not Found** – достопримечательность не найдена
       ```json
-     {
+      {
        "error": "Landmark not found"
      }
-     ```
+      ```
        
       - **PUT** /landmarks/{id} – редактирование своей достопримечательности (Владелец)
        **Вход:**
