@@ -48,6 +48,7 @@
 
     - Файл выглядит: landmarks.sql
     ![image](https://github.com/user-attachments/assets/090f0e75-2824-4c46-acfe-04a826469fe9)
+    Нужно добавить сюда этот файл и нажать импорт
 
 6. Запустить приложение
 
