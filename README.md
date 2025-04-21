@@ -51,30 +51,30 @@
 
 ### Аутентификация и регистрация пользователей
 
- - **POST** `/auth/register` – регистрация нового пользователя (Открытый)
-   **Вход:**
-   ```json
-   {
-     "username": "user1",
-     "email": "user1@example.com",
-     "password": "password123"
-   }
-   ```
-   **Выход:**
-   
-   **201 Created** – успешная регистрация
- 
-   **400 Bad Request** – если данные неверны (например, email уже зарегистрирован)
- 
-   ```json
-   {
-   "id": 1,
-   "username": "user1",
-   "email": "user1@example.com",
-   "created_at": "2025-03-18T14:30:00Z"
-   }
-   ```
- - **POST** `/auth/login` – вход пользователя и получение JWT токена (Открытый)
+- **POST** `/auth/register` – регистрация нового пользователя (Открытый)
+**Вход:**
+```json
+{
+  "username": "user1",
+  "email": "user1@example.com",
+  "password": "password123"
+}
+```
+**Выход:**
+
+**201 Created** – успешная регистрация
+
+**400 Bad Request** – если данные неверны (например, email уже зарегистрирован)
+
+```json
+{
+ "id": 1,
+ "username": "user1",
+ "email": "user1@example.com",
+ "created_at": "2025-03-18T14:30:00Z"
+}
+```
+- **POST** `/auth/login` – вход пользователя и получение JWT токена (Открытый)
  
 **Вход:**
  ```json
@@ -96,8 +96,7 @@
     "error": "Invalid credentials"
 }
 ```
-   
-     
+  
 - **GET** `/auth/me` – получение информации о текущем пользователе (Авторизованный пользователь)
 **Вход:**
 
@@ -120,121 +119,120 @@
 }
 ```
    
-   ### Достопримечательности
+### Достопримечательности
    
-  - **POST** /landmarks – добавление новой достопримечательности (Авторизованный пользователь)
-   **Вход:**
-  ```json
- {
-   "name": "Statue of Liberty",
-   "description": "A famous monument in New York",
-   "location": "New York",
-   "country": "USA",
-   "imageUrl": "https://example.com/statue.jpg"
- }
-  ```
-  **Выход:**
-  **201 Created** – успешное создание достопримечательности
-  ```json
- {
-   "id": 1,
-   "name": "Statue of Liberty",
-   "description": "A famous monument in New York",
-   "location": "New York",
-   "country": "USA",
-   "imageUrl": "https://example.com/statue.jpg",
-   "created_at": "2025-03-18T14:30:00Z",
-   "user_id": 1
- }
-  ```
-  **400 Bad Request** – данные неверны или отсутствуют обязательные поля
-  ```json
- {
-   "error": "Missing required fields"
- }
- ```
+- **POST** /landmarks – добавление новой достопримечательности (Авторизованный пользователь)
+ **Вход:**
+```json
+{
+  "name": "Statue of Liberty",
+  "description": "A famous monument in New York",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/statue.jpg"
+}
+```
+**Выход:**
+**201 Created** – успешное создание достопримечательности
+```json
+{
+  "id": 1,
+  "name": "Statue of Liberty",
+  "description": "A famous monument in New York",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/statue.jpg",
+  "created_at": "2025-03-18T14:30:00Z",
+  "user_id": 1
+}
+```
+**400 Bad Request** – данные неверны или отсутствуют обязательные поля
+ ```json
+{
+  "error": "Missing required fields"
+}
+```
  
  - **GET** /landmarks – получение списка всех достопримечательностей (Открытый)
-    **Вход:**
-    
-    *Входные данные не требуются*
-    
-    **Выход:**
-    
-    **200 OK** – успешное получение списка достопримечательностей
-    ```json
-   {
-       "id": 1,
-       "name": "Statue of Liberty",
-       "country": "USA",
-       "location": "New York",
-       "imageUrl": "https://example.com/statue.jpg"
-     },
-     {
-       "id": 2,
-       "name": "Eiffel Tower",
-       "country": "France",
-       "location": "Paris",
-       "imageUrl": "https://example.com/eiffel.jpg"
-     }
-      ```
+**Вход:**
+
+*Входные данные не требуются*
+
+**Выход:**
+
+**200 OK** – успешное получение списка достопримечательностей
+ ```json
+{
+    "id": 1,
+    "name": "Statue of Liberty",
+    "country": "USA",
+    "location": "New York",
+    "imageUrl": "https://example.com/statue.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Eiffel Tower",
+    "country": "France",
+    "location": "Paris",
+    "imageUrl": "https://example.com/eiffel.jpg"
+  }
+ ```
    
      
-   **GET** /landmarks/{id} – получение информации о конкретной достопримечательности (Открытый)
-   **Вход:**
-   *Входные данные не требуются*
-   **Выход:**
-   **200 OK** – успешный вход
-   ```json
-   {
-     "id": 1,
-     "name": "Statue of Liberty",
-     "description": "A famous monument in New York",
-     "location": "New York",
-     "country": "USA",
-     "imageUrl": "https://example.com/statue.jpg",
-     "created_at": "2025-03-18T14:30:00Z"
-   }
-   ```
-
- 
-    **404 Not Found** – достопримечательность не найдена
+**GET** /landmarks/{id} – получение информации о конкретной достопримечательности (Открытый)
+**Вход:**
+*Входные данные не требуются*
+**Выход:**
+**200 OK** – успешный вход
 ```json
-    {
-     "error": "Landmark not found"
-    }
+{
+  "id": 1,
+  "name": "Statue of Liberty",
+  "description": "A famous monument in New York",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/statue.jpg",
+  "created_at": "2025-03-18T14:30:00Z"
+}
+```
+
+**404 Not Found** – достопримечательность не найдена
+```json
+{
+ "error": "Landmark not found"
+}
 ```
 **PUT** /landmarks/{id} – редактирование своей достопримечательности (Владелец)
      **Вход:**
  
  ```json
-   {
-     "name": "Statue of Liberty Updated",
-     "description": "An updated description of the famous monument",
-     "location": "New York",
-     "country": "USA",
-     "imageUrl": "https://example.com/updated_statue.jpg"
-   }
+{
+  "name": "Statue of Liberty Updated",
+  "description": "An updated description of the famous monument",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/updated_statue.jpg"
+}
  ```
     
  **Выход:**
     **200 OK** – успешное обновление
 ```json
-   {
-     "id": 1,
-     "name": "Statue of Liberty Updated",
-     "description": "An updated description of the famous monument",
-     "location": "New York",
-     "country": "USA",
-     "imageUrl": "https://example.com/updated_statue.jpg",
-     "updated_at": "2025-03-18T15:00:00Z"
-   }
+{
+  "id": 1,
+  "name": "Statue of Liberty Updated",
+  "description": "An updated description of the famous monument",
+  "location": "New York",
+  "country": "USA",
+  "imageUrl": "https://example.com/updated_statue.jpg",
+  "updated_at": "2025-03-18T15:00:00Z"
+}
 ```
 **403 Forbidden** – пользователь не является владельцев достопримечательности
 ```json
-   {
-     "error": "Forbidden"
-   }
+{
+  "error": "Forbidden"
+}
 ```
      
 - **DELETE** /landmarks/{id} – удаление своей достопримечательности (Владелец)
@@ -253,30 +251,30 @@
 **403 Forbidden** – пользователь не является владельцев достопримечательности
 
 ```json
-   {
-     "error": "Forbidden"
-   }
+{
+  "error": "Forbidden"
+}
 ```
 
 - **GET** /landmarks?country={country}&rating={rating} – фильтрация и сортировка по стране и рейтингу (Открытый)
 
 **Вход:**
 ```json
-   {
-     "country": "USA",
-     "rating": 5
-   }
+{
+  "country": "USA",
+  "rating": 5
+}
 ```
  **Выход:**
     **200 OK** – успешная фильтрация и сортировка
 ```json
-    {
-       "id": 1,
-       "name": "Statue of Liberty",
-       "country": "USA",
-       "location": "New York",
-       "imageUrl": "https://example.com/statue.jpg"
-     }
+{
+  "id": 1,
+  "name": "Statue of Liberty",
+  "country": "USA",
+  "location": "New York",
+  "imageUrl": "https://example.com/statue.jpg"
+}
 ```
 
 ### Фотографии
