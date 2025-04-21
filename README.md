@@ -310,15 +310,16 @@
 ```
 **Выход:**
 **200 OK** – успешная фильтрация и сортировка
-    ```json
-    {
-       "id": 1,
-       "name": "Statue of Liberty",
-       "country": "USA",
-       "location": "New York",
-       "imageUrl": "https://example.com/statue.jpg"
-     }
-     ```
+```json
+{
+  "id": 1,
+  "name": "Statue of Liberty",
+  "country": "USA",
+  "location": "New York",
+  "imageUrl": "https://example.com/statue.jpg"
+}
+```
+
 - **PUT** /ratings/{id} – редактирование своей оценки (Владелец)
 - **DELETE** /ratings/{id} – удаление своей оценки (Владелец)
 
