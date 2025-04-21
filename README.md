@@ -43,6 +43,7 @@
 ## Установка и запуск
 1. Клонировать проект с гитхаб
     - Нужно набрать соответствующую команду:
+   
     ```json
     git clone https://github.com/Dr3nulja/world-landmarks.git
     ```
