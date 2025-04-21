@@ -61,12 +61,12 @@
 8. Запустить приложение
 - Установить Flask
 ```json
- pip install Flask
+    pip install Flask
 ```
    
 - Чтобы запустить приложение, просто в терминале перейди в папку с файлом app.py и выполните команду:
 ```json
- python app.py
+    python app.py
 ```
    
 
