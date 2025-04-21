@@ -244,7 +244,7 @@
 **200 OK** – успешное удаление
 ```json
 {
-"message": "Landmark deleted successfully"
+  "message": "Landmark deleted successfully"
 }
 ```
 
