@@ -45,6 +45,7 @@
 2. Установить [Python](https://www.python.org/downloads/)
 3. Установить [XAMPP](https://www.apachefriends.org/download.html)
     - В XAMPP панели нужно запустить все так как на скриншоте.
+  
     ![image](https://github.com/user-attachments/assets/217026fb-88ed-4e4f-bba0-0da255dd6d21)
     - После чего зайти в Admin панель MySql
 5. Импортировать базу данных. **Она находиться в папке с проектом которую вы клонировали!**
