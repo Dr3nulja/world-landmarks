@@ -42,8 +42,14 @@
 
 ## Установка и запуск
 1. Клонировать проект с гитхаб
-2. Установить [Python](https://www.python.org/downloads/)
-3. Установить [XAMPP](https://www.apachefriends.org/download.html)
+    - Нужно набрать соответствующую команду:
+    ```json
+    git clone https://github.com/Dr3nulja/world-landmarks.git
+    ```
+    
+
+3. Установить [Python](https://www.python.org/downloads/)
+4. Установить [XAMPP](https://www.apachefriends.org/download.html)
     - В XAMPP панели нужно запустить все так как на скриншоте.
   
     ![image](https://github.com/user-attachments/assets/217026fb-88ed-4e4f-bba0-0da255dd6d21)
