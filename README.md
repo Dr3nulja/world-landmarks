@@ -319,7 +319,68 @@
 ```
 
 - **PUT** /ratings/{id} – редактирование своей оценки (Владелец)
+
+  **Вход**
+  ```json
+  {
+  "score": 4,
+  "comment": "Great place to visit!"
+  }
+
+  ```
+**Выход**
+**200 OK** - успешное обновление оценки
+```json
+{
+  "id": 5,
+  "landmark_id": 1,
+  "user_id": 3,
+  "score": 4,
+  "comment": "Great place to visit!",
+  "updated_at": "2025-04-20T10:15:00Z"
+}
+
+```
+**400 Bad request** - некорректные данные
+```json
+{
+  "error": "Invalid score value"
+}
+```
+**403 Forbidden** – пользователь не является владельцем оценки
+
+```json
+{
+  "error": "You do not have permission to edit this rating"
+}
+
+```
+**404 Not found** - оценка не найдена
+```json
+{
+  "error": "Rating not found"
+}
+```
+
+  
 - **DELETE** /ratings/{id} – удаление своей оценки (Владелец)
+
+  **Вход** - данные не требуются
+
+  **Выход**:
+  **204 No content** - оценка удалена
+  **404 Not found** - оценка не найдена
+  ```json
+  {
+  "error": "Rating not found"
+  }
+  ```
+  **403 Forbidden** - пользователь не является владельцем оценки
+  ```json
+  {
+  "error": "You do not have permission to delete this rating"
+  }
+  ```
 
 
 
