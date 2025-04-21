@@ -255,10 +255,11 @@
        "error": "Forbidden"
      }
 ```
-       
-      - **GET** /landmarks?country={country}&rating={rating} – фильтрация и сортировка по стране и рейтингу (Открытый)
-       **Вход:**
-  ```json
+
+- **GET** /landmarks?country={country}&rating={rating} – фильтрация и сортировка по стране и рейтингу (Открытый)
+**Вход:**
+
+```json
      {
        "country": "USA",
        "rating": 5
