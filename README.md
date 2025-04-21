@@ -365,22 +365,22 @@
   
 - **DELETE** /ratings/{id} – удаление своей оценки (Владелец)
 
-  **Вход** - данные не требуются
+**Вход** - данные не требуются
 
-  **Выход**:
-  **204 No content** - оценка удалена
-  **404 Not found** - оценка не найдена
-  ```json
-  {
-  "error": "Rating not found"
-  }
-  ```
-  **403 Forbidden** - пользователь не является владельцем оценки
-  ```json
-  {
-  "error": "You do not have permission to delete this rating"
-  }
-  ```
+**Выход**:
+**204 No content** - оценка удалена
+**404 Not found** - оценка не найдена
+```json
+{
+"error": "Rating not found"
+}
+```
+**403 Forbidden** - пользователь не является владельцем оценки
+```json
+{
+"error": "You do not have permission to delete this rating"
+}
+```
 
 
 
