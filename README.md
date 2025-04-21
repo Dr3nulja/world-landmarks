@@ -45,6 +45,7 @@
 2. Установить [Python](https://www.python.org/downloads/)
 3. Установить [XAMPP](https://www.apachefriends.org/download.html)
 4. Импортировать базу данных. **Она находиться в папке с проектом которую вы клонировали!**
+
 Файл выглядит: landmarks.sql
 6. Запустить приложение
 
