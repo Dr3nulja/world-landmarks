@@ -283,22 +283,22 @@
 - **POST** /photos – загрузка новой фотографии для достопримечательности (Авторизованный пользователь)
 
 **Вход:**
-    ```json
-   {
-     "landmark_id": 1,
-     "imageUrl": "https://example.com/photo.jpg"
-   }
-    ```
-    **Выход:**
-    **201 Created** – успешная загрузка фотографии
-    ```json
-    {
-     "id": 1,
-     "landmark_id": 1,
-     "imageUrl": "https://example.com/photo.jpg",
-     "created_at": "2025-03-18T14:30:00Z"
-   }
-    ```
+```json
+{
+ "landmark_id": 1,
+ "imageUrl": "https://example.com/photo.jpg"
+}
+```
+**Выход:**
+**201 Created** – успешная загрузка фотографии
+```json
+{
+ "id": 1,
+ "landmark_id": 1,
+ "imageUrl": "https://example.com/photo.jpg",
+ "created_at": "2025-03-18T14:30:00Z"
+}
+```
 - **GET** /photos?landmark_id={id} – получение списка фотографий для конкретной достопримечательности (Открытый)
 
 **Вход:**
