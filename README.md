@@ -202,10 +202,11 @@
       {
        "error": "Landmark not found"
       }
-  
+  ``
       - **PUT** /landmarks/{id} – редактирование своей достопримечательности (Владелец)
        **Вход:**
-      ```json
+   
+   ```json
      {
        "name": "Statue of Liberty Updated",
        "description": "An updated description of the famous monument",
@@ -213,10 +214,11 @@
        "country": "USA",
        "imageUrl": "https://example.com/updated_statue.jpg"
      }
-      ```
-      **Выход:**
+   ```
+      
+   **Выход:**
       **200 OK** – успешное обновление
-      ```json
+  ```json
      {
        "id": 1,
        "name": "Statue of Liberty Updated",
@@ -226,42 +228,42 @@
        "imageUrl": "https://example.com/updated_statue.jpg",
        "updated_at": "2025-03-18T15:00:00Z"
      }
-      ```
+  ```
       **403 Forbidden** – пользователь не является владельцев достопримечательности
-      ```json
+  ```json
      {
        "error": "Forbidden"
      }
-     ```
+  ```
        
-      - **DELETE** /landmarks/{id} – удаление своей достопримечательности (Владелец)
+  - **DELETE** /landmarks/{id} – удаление своей достопримечательности (Владелец)
        **Вход:**
      *Требуется только ID достопримечательности в URL*
       **Выход:**
       **200 OK** – успешное удаление
-      ```json
+  ```json
      {
        "message": "Landmark deleted successfully"
      }
-      ```
+ ```
       **403 Forbidden** – пользователь не является владельцев достопримечательности
-      ```json
+```json
      {
        "error": "Forbidden"
      }
-     ```
+```
        
       - **GET** /landmarks?country={country}&rating={rating} – фильтрация и сортировка по стране и рейтингу (Открытый)
        **Вход:**
-      ```json
+  ```json
      {
        "country": "USA",
        "rating": 5
      }
-      ```
-      **Выход:**
+  ```
+   **Выход:**
       **200 OK** – успешная фильтрация и сортировка
-      ```json
+  ```json
       {
          "id": 1,
          "name": "Statue of Liberty",
@@ -269,7 +271,7 @@
          "location": "New York",
          "imageUrl": "https://example.com/statue.jpg"
        }
-      ```
+  ```
 
   ### Фотографии
  - **POST** /photos – загрузка новой фотографии для достопримечательности (Авторизованный пользователь)
