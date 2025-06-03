@@ -78,7 +78,7 @@ pip install -r requirements.txt
    
 - Чтобы запустить приложение, просто в терминале перейди в папку с файлом app.py и выполните команду:
 ```json
-python app.py
+python run.py
 ```
    
 
